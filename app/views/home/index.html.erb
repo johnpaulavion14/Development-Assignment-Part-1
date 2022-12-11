@@ -1,10 +1,10 @@
 </br>
 <h1 class="fw-bold">Survey Prototype</h1>
 </br>
-<%= form_with url: "/shop_details/create_details" do |f| %>
+<%= form_with url: "/home/save_answer" do |f| %>
   <div>
     <h3> Q1: DELIVER THROUGH OTHERS </h3>
-    <%= f.radio_button :Q1, "A", autocomplete:"off" , class:"btn-check" %>
+    <%= f.radio_button :Q1, "A", autocomplete:"off" , class:"btn-check"%>
     <%= f.label :Q1_A,"A. NOT EFFECTIVE", class:"btn btn-outline-success", onclick: "clickAnswer('Q1','a')" %>
     <%= f.radio_button :Q1, "B", autocomplete:"off", class:"btn-check" %>
     <%= f.label :Q1_B,"B. NEITHER INEFFECTIVE OR EFFECTIVE", class:"btn btn-outline-success", onclick: "clickAnswer('Q1','b')" %>
