@@ -17,4 +17,7 @@ test:
 
 production:
   <<: *default
+  url: postgresql://${{ PGUSER }}:${{ PGPASSWORD }}@${{ PGHOST }}:${{ PGPORT }}/${{ PGDATABASE }}
   database: development_assignment_1
+  username: postgres
+  password: 6yFK62zhtaCnKdkYKO7x
