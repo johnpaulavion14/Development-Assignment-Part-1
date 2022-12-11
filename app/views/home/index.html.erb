@@ -5,31 +5,31 @@
   <div>
     <h3> Q1: DELIVER THROUGH OTHERS </h3>
     <%= f.radio_button :Q1, "A", autocomplete:"off" , class:"btn-check" %>
-    <%= f.label :Q1_A,"A. NOT EFFECTIVE", class:"btn btn-outline-success", onclick: "clickA('Q1')" %>
+    <%= f.label :Q1_A,"A. NOT EFFECTIVE", class:"btn btn-outline-success", onclick: "clickAnswer('Q1','a')" %>
     <%= f.radio_button :Q1, "B", autocomplete:"off", class:"btn-check" %>
-    <%= f.label :Q1_B,"B. NEITHER INEFFECTIVE OR EFFECTIVE", class:"btn btn-outline-success", onclick: "clickB('Q1')" %>
+    <%= f.label :Q1_B,"B. NEITHER INEFFECTIVE OR EFFECTIVE", class:"btn btn-outline-success", onclick: "clickAnswer('Q1','b')" %>
     <%= f.radio_button :Q1, "C" , autocomplete:"off", class:"btn-check" %>
-    <%= f.label :Q1_C,"C. EFFECTIVE", class:"btn btn-outline-success", onclick: "clickC('Q1')" %>
+    <%= f.label :Q1_C,"C. EFFECTIVE", class:"btn btn-outline-success", onclick: "clickAnswer('Q1','c')" %>
   </div>
   </br>
   <div>
     <h3> Q2: UNDERSTAND OTHERS PERSPECTIVES </h3>
     <%= f.radio_button :Q2, "A", autocomplete:"off" , class:"btn-check" %>
-    <%= f.label :Q2_A,"A. NOT EFFECTIVE", class:"btn btn-outline-success", onclick: "clickA('Q2')" %>
+    <%= f.label :Q2_A,"A. NOT EFFECTIVE", class:"btn btn-outline-success", onclick: "clickAnswer('Q2','a')" %>
     <%= f.radio_button :Q2, "B", autocomplete:"off", class:"btn-check" %>
-    <%= f.label :Q2_B,"B. NEITHER INEFFECTIVE OR EFFECTIVE", class:"btn btn-outline-success", onclick: "clickB('Q2')" %>
+    <%= f.label :Q2_B,"B. NEITHER INEFFECTIVE OR EFFECTIVE", class:"btn btn-outline-success", onclick: "clickAnswer('Q2','b')" %>
     <%= f.radio_button :Q2, "C" , autocomplete:"off", class:"btn-check" %>
-    <%= f.label :Q2_C,"C. EFFECTIVE", class:"btn btn-outline-success", onclick: "clickC('Q2')" %>
+    <%= f.label :Q2_C,"C. EFFECTIVE", class:"btn btn-outline-success", onclick: "clickAnswer('Q2','c')" %>
   </div>
   </br>
   <div>
     <h3> Q3: SOLVE COMPLEX PROBLEMS  </h3>
     <%= f.radio_button :Q3, "A", autocomplete:"off" , class:"btn-check" %>
-    <%= f.label :Q3_A,"A. NOT EFFECTIVE", class:"btn btn-outline-success", onclick: "clickA('Q3')" %>
+    <%= f.label :Q3_A,"A. NOT EFFECTIVE", class:"btn btn-outline-success", onclick: "clickAnswer('Q3','a')" %>
     <%= f.radio_button :Q3, "B", autocomplete:"off", class:"btn-check" %>
-    <%= f.label :Q3_B,"B. NEITHER INEFFECTIVE OR EFFECTIVE", class:"btn btn-outline-success", onclick: "clickB('Q3')" %>
+    <%= f.label :Q3_B,"B. NEITHER INEFFECTIVE OR EFFECTIVE", class:"btn btn-outline-success", onclick: "clickAnswer('Q3','b')" %>
     <%= f.radio_button :Q3, "C" , autocomplete:"off", class:"btn-check" %>
-    <%= f.label :Q3_C,"C. EFFECTIVE", class:"btn btn-outline-success", onclick: "clickC('Q3')" %>
+    <%= f.label :Q3_C,"C. EFFECTIVE", class:"btn btn-outline-success", onclick: "clickAnswer('Q3','c')" %>
   </div>
   </br>
   <%= f.submit "SUBMIT", class:"btn btn-outline-success btn-lg fw-bold text-dark" %>
@@ -38,25 +38,21 @@
 
 
 <script>
-  function clickA(x) {
-    const id_A = document.querySelector(`#${x}_a`)
-    const id_B = document.querySelector(`#${x}_b`)
-    const id_C = document.querySelector(`#${x}_c`)
-    id_A.checked = true
-  }
-
-  function clickB(x) {
-    const id_A = document.querySelector(`#${x}_a`)
-    const id_B = document.querySelector(`#${x}_b`)
-    const id_C = document.querySelector(`#${x}_c`)
-    id_B.checked = true
-  }
-
-  function clickC(x) {
-    const id_A = document.querySelector(`#${x}_a`)
-    const id_B = document.querySelector(`#${x}_b`)
-    const id_C = document.querySelector(`#${x}_c`)
-    id_C.checked = true
+  function clickAnswer(question, answer) {
+    switch (answer) {
+      case 'a':
+        const radioButtonA = document.querySelector(`#${question}_a`)
+        radioButtonA.checked = true;
+        break;
+      case 'b':
+        const radioButtonB = document.querySelector(`#${question}_b`)
+        radioButtonB.checked = true;
+        break;
+      case 'c':
+        const radioButtonC = document.querySelector(`#${question}_c`)
+        radioButtonC.checked = true;        
+        break; 
+    }
   }
 </script>
 
