@@ -3,19 +3,15 @@ class HomeController < ApplicationController
   end
 
   def save_answer
-    Answer.create(answers_params)
+    Answer.create(question_and_answer:{"Q1":params[:Q1],"Q2":params[:Q2],"Q3":params[:Q3]})
     redirect_to show_answers_path
   end
 
   def show_answer
-    @Answers = Answer.last
+    @Question_And_Answer = Answer.last.question_and_answer
   end
 
 
   private
-
-  def answers_params
-    params.permit(:Q1, :Q2, :Q3)
-  end
 
 end
